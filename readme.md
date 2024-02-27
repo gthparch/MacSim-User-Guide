@@ -42,7 +42,7 @@ Enter the following command and the simulation results will appear in the curren
 `$ ./macsim`
 For example, you can check the total number of cycles in `general.stat.out` file. 
 
-## Scripts 
+## Scripts for running Macsim
 `macsim.py` is a python script that I used to run multiple macsim simulations at the same time.
 ### Usage
 usage: `python3 macsim.py`
@@ -62,7 +62,7 @@ The following example will run `vector` and `rodinia` benchmark suite on macsim 
 
 `python3 macsim.py --macsim="macsim/bin/macsim" --params="macsim/bin/params.in" --suite vector rodinia --overwrite` 
 
-See macsim_result.txt in the result directory for STDOUT and STDERR outputs during the simulation.
+See `macsim_result.txt` in the result directory for STDOUT and STDERR outputs during the simulation.
 
 ## List of available traces
 
@@ -105,7 +105,7 @@ This is the list of traces that you can access in `rover` machine. I will keep t
 |                   | xlnet                | X                 | X | X |
 | Deepbench         | GEMM                 | O                 | /fast_data/echung67/trace_deep/nvbit/gemm | default | /fast_data/echung67/DeepBench/code/nvidia |
 
-### Upcoming traces.. (Plan) 
+### Upcoming Plans for trace generations..
 | Benchmark suite   | Benchmark            | Working on Macsim? | Trace Path | Suggested Config |
 |-------------------|----------------------|--------------------| - | - |
 | Deepbench         | CNN Inference        | -                  | - | - |
@@ -123,5 +123,5 @@ This is the list of traces that you can access in `rover` machine. I will keep t
 | Tango             | More Block Sizes     | -                  | - | - |
 
 
-## Creating traces
+## How to create your own traces
 
