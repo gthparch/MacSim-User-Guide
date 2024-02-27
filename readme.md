@@ -8,7 +8,7 @@ Author: Euijun Chung (echung67@gatech.edu)
 - [Scripts for running Macsim](#scripts-for-running-macsim)
 - [List of available traces](#list-of-available-traces)
 - [How to create your own trace](#how-to-create-your-own-trace)
-- 
+
 ## Macsim Installation & Usage
 ### Installation
 Installing Macsim is as easy as it gets. Just run the following commands:
