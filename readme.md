@@ -3,6 +3,10 @@
 This documentation explains how you can run various GPU workloads on Macsim. Macsim is a trace based cycle-level GPGPU simulator developed by [HPArch](https://sites.gatech.edu/hparch/).
 Author: Euijun Chung (echung67@gatech.edu)
 
+## Table of Contents
+- [Macsim Installation & Usage](#macsim-installation-&-usage)
+
+
 ## Macsim Installation & Usage
 ### Installation
 Installing Macsim is as easy as it gets. Just run the following commands:
