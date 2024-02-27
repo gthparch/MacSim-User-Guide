@@ -39,7 +39,7 @@ to run the Macsim simulation. All these three files should be in the same direct
 ### Running
 #### 1. Setup the Trace Path
 
-Open trace_file_list and leave 1 on the first line. On the second line, change it to the path to the trace you want to run. An example of trace_file_list would look like this:
+Open trace_file_list and leave 1 on the first line. Change the second line to the path of the trace that you want to run. An example of trace_file_list would look like this:
 ```
 1
 /fast_data/echung67/trace/nvbit/backprop/1024/kernel_config.txt
