@@ -66,7 +66,9 @@ options:
 #### Example
 The following example will run `vector` and `rodinia` benchmark suite on macsim and save its results to `./run/` directory. 
 
-`python3 macsim.py --macsim="macsim/bin/macsim" --params="macsim/bin/params.in" --suite vector rodinia --overwrite` 
+```
+python3 macsim.py --macsim="macsim/bin/macsim" --params="macsim/bin/params.in" --suite vector rodinia --overwrite
+```
 
 See `macsim_result.txt` in the result directory for STDOUT and STDERR outputs during the simulation.
 
