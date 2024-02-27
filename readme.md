@@ -4,9 +4,11 @@ This documentation explains how you can run various GPU workloads on Macsim. Mac
 Author: Euijun Chung (echung67@gatech.edu)
 
 ## Table of Contents
-- [Macsim Installation & Usage](#macsim-installation-&-usage)
-
-
+- [Macsim Installation & Usage](#macsim-installation--usage)
+- [Scripts for running Macsim](#scripts-for-running-macsim)
+- [List of available traces](#list-of-available-traces)
+- [How to create your own trace](#how-to-create-your-own-trace)
+- 
 ## Macsim Installation & Usage
 ### Installation
 Installing Macsim is as easy as it gets. Just run the following commands:
@@ -127,5 +129,17 @@ This is the list of traces that you can access in `rover` machine. I will keep t
 | Tango             | More Block Sizes     | -                  | - | - |
 
 
-## How to create your own traces
+## How to create your own trace
+> ❗️Warning❗️ The trace generation tool for macsim is very unstable, so use at your own risk.
 
+`CUDA_INJECTION_PATH`: `path/to/main/dot/so`
+
+#### Example
+```
+$ CUDA_INJECTION64_PATH=/fast_data/echung67/nvbit_release/tools/main/main.so \
+ TRACE_PATH=/data/echung67/sandbox/pytorch/resnet_train/ CUDA_VISIBLE_DEVICES=0 \
+ python3 resnet_train.py > resnet_train.out 2>&1 && \
+ cp /fast_data/echung67/nvbit_release/tools/main/compress /data/echung67/sandbox/pytorch/resnet_train && \
+ cd /data/echung67/sandbox/pytorch/resnet_train && \
+ ./compress
+```
