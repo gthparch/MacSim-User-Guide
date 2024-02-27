@@ -55,8 +55,12 @@ Open `params.in` file and put in some numbers for the GPU configuration. An exam
 #### 3. Run!
 
 Enter the following command and the simulation results will appear in the current directory.
-`$ ./macsim`
+```
+$ ./macsim
+```
+
 For example, you can check the total number of cycles in `general.stat.out` file. 
+
 
 ## Scripts for running Macsim
 `macsim.py` is a python script that I used to run multiple macsim simulations at the same time.
