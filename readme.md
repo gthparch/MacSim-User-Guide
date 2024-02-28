@@ -129,6 +129,7 @@ This is the list of traces that you can access in `rover` machine. I will keep t
 |                   | wenet_encoder        | O                 | /data/echung67/trace/nvbit/wenet_encoder_example | 10 |
 |                   | xlnet                | X                 | X | X |
 | Deepbench         | GEMM                 | O                 | /fast_data/echung67/trace_deep/nvbit/gemm | default | /fast_data/echung67/DeepBench/code/nvidia |
+| Pytorch           | Resnet Training      | O                 | /fast_data/echung67/trace_pytorch/nvbit/resnet_train | default | /fast_data/echung67//fast_data/echung67/trace_pytorch/source/resnet_train.py |
 
 ### Upcoming Plans for trace generations..
 | Benchmark suite   | Benchmark            | Working on Macsim? | Trace Path | Suggested Config |
@@ -142,7 +143,7 @@ This is the list of traces that you can access in `rover` machine. I will keep t
 | Pytorch           | CNN Inference        | -                  | - | - |
 |                   | CNN Training         | -                  | - | - |
 |                   | Resnet Inference     | -                  | - | - |
-|                   | Resnet Training      | -                  | - | - |
+|                   |       | -                  | - | - |
 | GraphBig          | -                    | -                  | - | - |
 | Gunrock           | -                    | -                  | - | - |
 | Tango             | More Block Sizes     | -                  | - | - |
