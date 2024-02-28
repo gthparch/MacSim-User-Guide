@@ -195,7 +195,7 @@ def run(argv):
 
           cmd = "nohup ./macsim > macsim_result.txt 2>&1"
           print(f"[cmd]: {cmd}")
-          subprocess.Popen([f"{cmd}"], shell=True, cwd=subdir)
+          subprocess.Popen([f"ulimit -n 16384 && {cmd}"], shell=True, cwd=subdir)
   return
 
 if __name__ == '__main__':
