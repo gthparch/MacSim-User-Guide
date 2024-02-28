@@ -87,7 +87,7 @@ python3 macsim.py --macsim="macsim/bin/macsim" --params="macsim/bin/params.in" -
 
 See `macsim_result.txt` in the result directory for STDOUT and STDERR outputs during the simulation.
 
-❗️You should not change the name of the parameter file `params.in`. The macsim binary will try to find `params.in` file in the same directory and use it as the GPU configuration.
+> ❗️ You should not change the name of the parameter file `params.in`. The macsim binary will try to find `params.in` file in the same directory and use it as the GPU configuration.
 
 ## List of available traces
 
