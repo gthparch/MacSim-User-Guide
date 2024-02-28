@@ -87,6 +87,8 @@ python3 macsim.py --macsim="macsim/bin/macsim" --params="macsim/bin/params.in" -
 
 See `macsim_result.txt` in the result directory for STDOUT and STDERR outputs during the simulation.
 
+The parameter file `params.in` stay the same, since the macsim binary will try to find `params.in` file in the same directory and use it as the GPU configuration.
+
 ## List of available traces
 
 This is the list of traces that you can access in `rover` machine. I will keep this updated. 
