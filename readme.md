@@ -121,29 +121,30 @@ This is the list of traces that you can access in `rover` machine. I will keep t
 |                   | LSTM                 | O                 | /fast_data/echung67/trace_tango/nvbit/LSTM | default |
 |                   | ResNet               | X                 | X | X |
 |                   | SqueezeNet           | X                 | X | X |
+| FasterTransformer | bert                 | O                 | /data/echung67/trace/nvbit/bert_example | 20 | /fast_data/echung67/FasterTransformer/examples/cpp |
+|                   | decoding             | O                 | /data/echung67/trace/nvbit/decoding_example | 20 |
+|                   | vit                  | X                 | X | X |
+|                   | wenet_encoder        | O                 | /data/echung67/trace/nvbit/wenet_encoder_example | 10 |
+|                   | xlnet                | X                 | X | X |
 | Deepbench         | GEMM                 | O                 | /fast_data/echung67/trace_deep/nvbit/gemm | default | /fast_data/echung67/DeepBench/code/nvidia |
-| Pytorch           | Resnet Training      | O                 | /fast_data/echung67/trace_pytorch/nvbit/resnet_train | default | /fast_data/echung67//fast_data/echung67/trace_pytorch/source/resnet_train.py |
+| Pytorch           | Resnet Training      | O                 | /fast_data/echung67/trace_pytorch/nvbit/resnet_train | default | /fast_data/echung67/trace_pytorch/source/resnet_train.py |
+|                   | CNN Inference        | O                 | /fast_data/echung67/trace_pytorch/nvbit/cnn_inf | default | /fast_data/echung67/trace_pytorch/source/cnn_inference.py |
+
 
 ### Upcoming Plans for trace generations..
 | Benchmark suite   | Benchmark            | Working on Macsim? | Trace Path | Suggested Config |
 |-------------------|----------------------|--------------------| - | - |
-| FasterTransformer | bert                 | O                 | /data/echung67/trace/nvbit/bert_example | 20 | /fast_data/echung67/FasterTransformer/examples/cpp |
-|                   | decoding             | O                 | /data/echung67/trace/nvbit/decoding_example | 20 |
-|                   | swin                 | O                 | /data/echung67/trace/nvbit/swin_example | 10 |
-|                   | vit                  | X                 | X | X |
-|                   | wenet_decoder        | O                 | /data/echung67/trace/nvbit/wenet_decoder_example | 10 |
-|                   | wenet_encoder        | O                 | /data/echung67/trace/nvbit/wenet_encoder_example | 10 |
-|                   | xlnet                | X                 | X | X |
+| FasterTransformer | swin                 | O                  | /data/echung67/trace/nvbit/swin_example | 10 |
+|                   | wenet_decoder        | O                  | /data/echung67/trace/nvbit/wenet_decoder_example | 10 |
 | Deepbench         | CNN Inference        | -                  | - | - |
 |                   | CNN Training         | -                  | - | - |
 |                   | RNN Inference        | -                  | - | - |
 |                   | RNN Training         | -                  | - | - |
 |                   | Sparse Inference     | -                  | - | - |
 |                   | Sparse Training      | -                  | - | - |
-| Pytorch           | CNN Inference        | -                  | - | - |
-|                   | CNN Training         | -                  | - | - |
+| Pytorch           | CNN Training         | -                  | - | - |
 |                   | Resnet Inference     | -                  | - | - |
-|                   |       | -                  | - | - |
+|                   |                      | -                  | - | - |
 | GraphBig          | -                    | -                  | - | - |
 | Gunrock           | -                    | -                  | - | - |
 | Tango             | More Block Sizes     | -                  | - | - |
