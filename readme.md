@@ -13,6 +13,7 @@ Author: Euijun Chung (echung67@gatech.edu)
 - [Scripts for running Macsim](#scripts-for-running-macsim)
 - [List of available traces](#list-of-available-traces)
 - [How to create your own trace](#how-to-create-your-own-trace)
+- [Known Bugs](#known-bugs)
 
 ## Macsim Installation & Usage
 ### Installation
@@ -163,3 +164,5 @@ $ CUDA_INJECTION64_PATH=/fast_data/echung67/nvbit_release/tools/main/main.so \
  cd /data/echung67/sandbox/pytorch/resnet_train && \
  ./compress
 ```
+
+## Known Bugs
