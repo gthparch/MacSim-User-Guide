@@ -155,6 +155,7 @@ This is the list of traces that you can access in `rover` machine. I will keep t
 
 ### Installation
 > If you are working on rover, you can skip this step.
+
 Please refer to this repository: https://github.com/ejchung0406/gpu-trace-generate
 
 ### Usage
@@ -174,7 +175,6 @@ There are a few arguments that you can use:
 - `KERNEL_BEGIN`: Beginning of the kernel interval where to generate traces. (`default = 0`)
 - `KERNEL_END`: End of the kernel interval where to generate traces. (`default = UINT32_MAX`)
 - `TOOL_VERBOSE`: Enable verbosity inside the tool. (`default = 0`)
-
 - `TRACE_PATH`: Path to trace file. (`default = './'`)
 - `COMPRESSOR_PATH`: Path to the compressor binary file. (`default = '/fast_data/echung67/nvbit_release/tools/main/compress'`)
 - `DEBUG_TRACE`: Generate human-readable debug traces together when this value is 1. (`default = 0`)
@@ -182,7 +182,12 @@ There are a few arguments that you can use:
 
 #### Example
 ```
-$ CUDA_INJECTION64_PATH=/fast_data/echung67/nvbit_release/tools/main/main.so TRACE_PATH=./ KERNEL_END=5 DEBUG_TRACE=1 OVERWRITE=1 python3 m.py
+$ CUDA_INJECTION64_PATH=/fast_data/echung67/nvbit_release/tools/main/main.so \
+  TRACE_PATH=./ \
+  KERNEL_END=5 \
+  DEBUG_TRACE=1 \
+  OVERWRITE=1 \
+  python3 m.py
 ```
 This command will generate traces for the first 5 CUDA kernels of the workload `python3 m.py`. Also, the tool will overwrite the previous traces and generate the debug traces as well. 
 
