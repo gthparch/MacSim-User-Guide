@@ -113,14 +113,14 @@ def run(argv):
   ft_benchmark_subdir = {
     "bert_example": ["20"],
     "decoding_example": ["20"],
-    "swin_example": ["10"],
-    "wenet_decoder_example": ["10"],
-    "wenet_encoder_example": ["10"],
+    "swin_example": ["20"],
+    "wenet_decoder_example": ["20"],
+    "wenet_encoder_example": ["20"],
   }
 
   deep_benchmark_names = [
-    # "gemm",
-    "cnn_inf",
+    "gemm",
+    # "cnn_inf",
   ]
 
   deep_benchmark_subdir = {
@@ -129,10 +129,10 @@ def run(argv):
   }
 
   torch_benchmark_names = [
-    "cnn_train",
+    # "cnn_train",
     "cnn_inf",
-    # "resnet_train",
-    "resnet_inf",
+    "resnet_train",
+    # "resnet_inf",
   ]
 
   torch_benchmark_subdir = {
@@ -161,13 +161,13 @@ def run(argv):
         benchmark_names = ft_benchmark_names
         benchmark_subdir = ft_benchmark_subdir
       elif suite_name == 'deepbench':
-        # trace_path_base = "/fast_data/echung67/trace_deep/nvbit/"
-        trace_path_base = "/fast_data/echung67/sandbox/trace/deepbench/"
+        trace_path_base = "/fast_data/echung67/trace_deep/nvbit/"
+        # trace_path_base = "/fast_data/echung67/sandbox/trace/deepbench/"
         benchmark_names = deep_benchmark_names
         benchmark_subdir = deep_benchmark_subdir
       elif suite_name == 'pytorch':
-        # trace_path_base = "/fast_data/echung67/trace_pytorch/nvbit/"
-        trace_path_base = "/fast_data/echung67/sandbox/trace/pytorch/"
+        trace_path_base = "/fast_data/echung67/trace_pytorch/nvbit/"
+        # trace_path_base = "/fast_data/echung67/sandbox/trace/pytorch/"
         benchmark_names = torch_benchmark_names
         benchmark_subdir = torch_benchmark_subdir
       else:
