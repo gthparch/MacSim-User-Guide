@@ -127,7 +127,8 @@ This is the list of traces that you can access in `rover` machine. I will keep t
 |                   | vit                  | X                 | X | X |
 |                   | wenet_encoder        | O                 | /data/echung67/trace/nvbit/wenet_encoder_example | 20 |
 |                   | xlnet                | X                 | X | X |
-| Deepbench         | GEMM                 | O                 | /fast_data/echung67/trace_deep/nvbit/gemm | default | /fast_data/echung67/DeepBench/code/nvidia |
+| Deepbench         | GEMM                 | O                 | /fast_data/echung67/trace_deep/nvbit/gemm | default | /fast_data/echung67/DeepBench/code/nvidia_small/gemm_bench.cu |
+|                   | CNN Inference        | O                 | /fast_data/echung67/trace_deep/nvbit/cnn_inf | default | /fast_data/echung67/DeepBench/code/nvidia_small/conv_bench.cu |
 | Pytorch           | Resnet Training      | O                 | /fast_data/echung67/trace_pytorch/nvbit/resnet_train | default | /fast_data/echung67/trace_pytorch/source/resnet_train.py |
 |                   | CNN Inference        | O                 | /fast_data/echung67/trace_pytorch/nvbit/cnn_inf | default | /fast_data/echung67/trace_pytorch/source/cnn_inference.py |
 
@@ -137,8 +138,7 @@ This is the list of traces that you can access in `rover` machine. I will keep t
 |-------------------|----------------------|--------------------| - | - |
 | FasterTransformer | swin                 | O                  | /data/echung67/trace/nvbit/swin_example | 20 |
 |                   | wenet_decoder        | O                  | /data/echung67/trace/nvbit/wenet_decoder_example | 20 |
-| Deepbench         | CNN Inference        | -                  | - | - |
-|                   | CNN Training         | -                  | - | - |
+| Deepbench         | CNN Training         | -                  | - | - |
 |                   | RNN Inference        | -                  | - | - |
 |                   | RNN Training         | -                  | - | - |
 |                   | Sparse Inference     | -                  | - | - |
