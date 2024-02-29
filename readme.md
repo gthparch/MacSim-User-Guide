@@ -169,15 +169,18 @@ $ CUDA_INJECTION64_PATH=/fast_data/echung67/nvbit_release/tools/main/main.so \
 > `src/memory.cc:1043: ASSERT FAILED (I=19  C=13193):  0`
 
 **When?** FasterTransformer trace + too many number of cores (40+ cores)
+
 **Solution?** Reduce the number of cores
 
 > `src/factory_class.cc:77: ASSERT FAILED (I=0  C=0):  m_func_table.find(policy) != m_func_table.end()`
 
 **When?** `params.in` file is missing (using wrong file name for `params.in`)
+
 **Solution?** Don't use custom names for GPU config file, use `params.in`.
 
 > `src/process_manager.cc:826: ASSERT FAILED (I=0  C=0):  error opening trace file: ...`
 
 **When?** When too many trace files are open at the same time
+
 **Solution?** Add `ulimit -n 16384` to your `~/.bashrc`.
 - However, for traces that use more than 16384 files opened at the same time, it seems like there's no solution for this.. Any helps to solve this issue would be helpful!
