@@ -119,19 +119,27 @@ def run(argv):
   }
 
   deep_benchmark_names = [
-    "gemm",
+    # "gemm",
+    "cnn_inf",
   ]
 
   deep_benchmark_subdir = {
     "gemm": ["default"],
+    "cnn_inf": ["default"],
   }
 
   torch_benchmark_names = [
     "cnn_train",
+    "cnn_inf",
+    # "resnet_train",
+    "resnet_inf",
   ]
 
   torch_benchmark_subdir = {
     "cnn_train": ["default"],
+    "cnn_inf": ["default"],
+    "resnet_train": ["default"],
+    "resnet_inf": ["default"],
   }
 
   if args.suite:
@@ -153,11 +161,13 @@ def run(argv):
         benchmark_names = ft_benchmark_names
         benchmark_subdir = ft_benchmark_subdir
       elif suite_name == 'deepbench':
-        trace_path_base = "/fast_data/echung67/trace_deep/nvbit/"
+        # trace_path_base = "/fast_data/echung67/trace_deep/nvbit/"
+        trace_path_base = "/fast_data/echung67/sandbox/trace/deepbench/"
         benchmark_names = deep_benchmark_names
         benchmark_subdir = deep_benchmark_subdir
       elif suite_name == 'pytorch':
-        trace_path_base = "/fast_data/echung67/trace_pytorch/nvbit/"
+        # trace_path_base = "/fast_data/echung67/trace_pytorch/nvbit/"
+        trace_path_base = "/fast_data/echung67/sandbox/trace/pytorch/"
         benchmark_names = torch_benchmark_names
         benchmark_subdir = torch_benchmark_subdir
       else:
@@ -166,9 +176,9 @@ def run(argv):
       for bench_name in benchmark_names:
         bench_subdirs = benchmark_subdir[bench_name]
         for bench_subdir in bench_subdirs:
-          print(f"[Macsim] Running {bench_name}/{bench_subdir}")
+          print(f"[Macsim] Running {suite_name}/{bench_name}/{bench_subdir}")
           # create the result directory
-          subdir = os.path.join(result_dir, bench_name, bench_subdir)
+          subdir = os.path.join(result_dir, suite_name, bench_name, bench_subdir)
           if os.path.exists(subdir):
             if args.overwrite:
               shutil.rmtree(subdir)
