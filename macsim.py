@@ -46,23 +46,23 @@ def run(argv):
 
   rodinia_benchmark_names = [
     # Rodinia
-    "backprop",
-    "bfs",
-    "dwt2d",
+    # "backprop",
+    # "bfs",
+    # "dwt2d",
     # "euler3d",
-    "gaussian",
+    # "gaussian",
     # "heartwall",
-    # "hotspot",
-    "lavaMD",
-    "lud_cuda",
-    "needle",
-    "nn",
-    "particlefilter_float",
-    "particlefilter_naive",
-    "pathfinder",
-    "sc_gpu",
-    "srad_v1",
-    "srad_v2",
+    "hotspot",
+    # "lavaMD",
+    # "lud_cuda",
+    # "needle",
+    # "nn",
+    # "particlefilter_float",
+    # "particlefilter_naive",
+    # "pathfinder",
+    # "sc_gpu",
+    # "srad_v1",
+    # "srad_v2",
   ]
 
   rodinia_benchmark_subdir = {
@@ -120,7 +120,7 @@ def run(argv):
 
   deep_benchmark_names = [
     "gemm",
-    # "cnn_inf",
+    "cnn_inf",
   ]
 
   deep_benchmark_subdir = {
@@ -129,10 +129,14 @@ def run(argv):
   }
 
   torch_benchmark_names = [
-    # "cnn_train",
+    "cnn_train",
     "cnn_inf",
     "resnet_train",
-    # "resnet_inf",
+    "resnet_inf",
+    "bert_tiny",
+    "bert_mini",
+    "bert_small",
+    "bert_medium",
   ]
 
   torch_benchmark_subdir = {
@@ -140,6 +144,10 @@ def run(argv):
     "cnn_inf": ["default"],
     "resnet_train": ["default"],
     "resnet_inf": ["default"],
+    "bert_tiny": ["default"],
+    "bert_mini": ["default"],
+    "bert_small": ["default"],
+    "bert_medium": ["default"],
   }
 
   if args.suite:
@@ -162,12 +170,10 @@ def run(argv):
         benchmark_subdir = ft_benchmark_subdir
       elif suite_name == 'deepbench':
         trace_path_base = "/fast_data/echung67/trace_deep/nvbit/"
-        # trace_path_base = "/fast_data/echung67/sandbox/trace/deepbench/"
         benchmark_names = deep_benchmark_names
         benchmark_subdir = deep_benchmark_subdir
       elif suite_name == 'pytorch':
         trace_path_base = "/fast_data/echung67/trace_pytorch/nvbit/"
-        # trace_path_base = "/fast_data/echung67/sandbox/trace/pytorch/"
         benchmark_names = torch_benchmark_names
         benchmark_subdir = torch_benchmark_subdir
       else:
