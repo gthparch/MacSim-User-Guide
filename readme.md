@@ -130,6 +130,7 @@ This is the list of traces that you can access in `rover` machine. I will keep t
 | Deepbench         | GEMM                 | O                 | /fast_data/echung67/trace_deep/nvbit/gemm | default | /fast_data/echung67/DeepBench/code/nvidia_small/gemm_bench.cu |
 |                   | CNN Inference        | O                 | /fast_data/echung67/trace_deep/nvbit/cnn_inf | default | /fast_data/echung67/DeepBench/code/nvidia_small/conv_bench.cu |
 | Pytorch           | Resnet Training      | O                 | /fast_data/echung67/trace_pytorch/nvbit/resnet_train | default | /fast_data/echung67/trace_pytorch/source/resnet_train.py |
+|                   | CNN Training         | O                 | /fast_data/echung67/trace_pytorch/nvbit/cnn_train | default | /fast_data/echung67/trace_pytorch/source/cnn_train.py |
 |                   | CNN Inference        | O                 | /fast_data/echung67/trace_pytorch/nvbit/cnn_inf | default | /fast_data/echung67/trace_pytorch/source/cnn_inference.py |
 
 
@@ -143,11 +144,10 @@ This is the list of traces that you can access in `rover` machine. I will keep t
 |                   | RNN Training         | -                  | - | - |
 |                   | Sparse Inference     | -                  | - | - |
 |                   | Sparse Training      | -                  | - | - |
-| Pytorch           | CNN Training         | -                  | - | - |
-|                   | Resnet Inference     | -                  | - | - |
+| Pytorch           | Resnet Inference     | -                  | - | - |
 | GraphBig          | -                    | -                  | - | - |
 | Gunrock           | -                    | -                  | - | - |
-| Tango             | More Block Sizes     | -                  | - | - |
+| Tango             | More Block Sizes?    | -                  | - | - |
 
 
 ## How to create your own trace
