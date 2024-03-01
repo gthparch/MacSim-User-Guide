@@ -105,7 +105,7 @@ This is the list of traces that you can access in `rover` machine. I will keep t
 |                   | euler3d              | X                 | X | X |
 |                   | gaussian             | O                 | /fast_data/echung67/trace/nvbit/gaussian | matrix128 |
 |                   | heartwall            | X                 | X | X |
-|                   | hotspot              | X                 | /fast_data/echung67/trace/nvbit/hotspot | r512h2i2 |
+|                   | hotspot              | O                 | /fast_data/echung67/trace/nvbit/hotspot | r512h2i2 |
 |                   | lavaMD               | O                 | /fast_data/echung67/trace/nvbit/lavaMD | 10 |
 |                   | lud_cuda             | O                 | /fast_data/echung67/trace/nvbit/lud_cuda | 64 |
 |                   | needle               | O                 | /fast_data/echung67/trace/nvbit/needle | 64 |
@@ -137,14 +137,18 @@ This is the list of traces that you can access in `rover` machine. I will keep t
 ### Upcoming Plans for trace generations..
 | Benchmark suite   | Benchmark            | Working on Macsim? | Trace Path | Suggested Config |
 |-------------------|----------------------|--------------------| - | - |
-| FasterTransformer | swin                 | O                  | /data/echung67/trace/nvbit/swin_example | 20 |
-|                   | wenet_decoder        | O                  | /data/echung67/trace/nvbit/wenet_decoder_example | 20 |
+| FasterTransformer | swin                 | ?                  | /data/echung67/trace/nvbit/swin_example | 20 |
+|                   | wenet_decoder        | ?                  | /data/echung67/trace/nvbit/wenet_decoder_example | 20 |
 | Deepbench         | CNN Training         | -                  | - | - |
 |                   | RNN Inference        | -                  | - | - |
 |                   | RNN Training         | -                  | - | - |
 |                   | Sparse Inference     | -                  | - | - |
 |                   | Sparse Training      | -                  | - | - |
-| Pytorch           | Resnet Inference     | -                  | - | - |
+| Pytorch           | Resnet Inference     | ?                  | /fast_data/echung67/trace_pytorch/nvbit/resnet_inf | - |
+|                   | Bert-tiny            | ?                  | /fast_data/echung67/trace_pytorch/nvbit/bert_tiny | default | /fast_data/echung67/sandbox/bert/bert_tiny.py |
+|                   | Bert-mini            | ?                  | /fast_data/echung67/trace_pytorch/nvbit/bert_mini | default | /fast_data/echung67/sandbox/bert/bert_mini.py |
+|                   | Bert-small           | ?                  | /fast_data/echung67/trace_pytorch/nvbit/bert_small | default | /fast_data/echung67/sandbox/bert/bert_small.py |
+|                   | Bert-medium          | ?                  | /fast_data/echung67/trace_pytorch/nvbit/bert_medium | default | /fast_data/echung67/sandbox/bert/bert_medium.py |
 | GraphBig          | -                    | -                  | - | - |
 | Gunrock           | -                    | -                  | - | - |
 | Tango             | More Block Sizes?    | -                  | - | - |
