@@ -125,6 +125,8 @@ This is the list of traces that you can access in `rover` machine. I will keep t
 | FasterTransformer | bert                 | O                 | /data/echung67/trace/nvbit/bert_example | 20 | /fast_data/echung67/FasterTransformer/examples/cpp/ |
 |                   | decoding             | O                 | /data/echung67/trace/nvbit/decoding_example | 20 |
 |                   | vit                  | X                 | X | X |
+|                   | swin                 | O                 | /data/echung67/trace/nvbit/swin_example | 20 | 
+|                   | wenet_decoder        | O                 | /data/echung67/trace/nvbit/wenet_decoder_example | 20 |
 |                   | wenet_encoder        | O                 | /data/echung67/trace/nvbit/wenet_encoder_example | 20 |
 |                   | xlnet                | X                 | X | X |
 | Deepbench         | GEMM                 | O                 | /fast_data/echung67/trace_deep/nvbit/gemm | default | /fast_data/echung67/DeepBench/code/nvidia_small/gemm_bench.cu |
@@ -141,8 +143,6 @@ This is the list of traces that you can access in `rover` machine. I will keep t
 ### Upcoming Plans for trace generations..
 | Benchmark suite   | Benchmark            | Working on Macsim? | Trace Path | Suggested Config |
 |-------------------|----------------------|--------------------| - | - |
-| FasterTransformer | swin                 | ?                  | /data/echung67/trace/nvbit/swin_example | 20 |
-|                   | wenet_decoder        | ?                  | /data/echung67/trace/nvbit/wenet_decoder_example | 20 |
 | Deepbench         | CNN Training         | -                  | - | - |
 |                   | RNN Inference        | -                  | - | - |
 |                   | RNN Training         | -                  | - | - |
