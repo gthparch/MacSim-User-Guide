@@ -46,23 +46,23 @@ def run(argv):
 
   rodinia_benchmark_names = [
     # Rodinia
-    # "backprop",
-    # "bfs",
-    # "dwt2d",
+    "backprop",
+    "bfs",
+    "dwt2d",
     # "euler3d",
-    # "gaussian",
+    "gaussian",
     # "heartwall",
     "hotspot",
-    # "lavaMD",
-    # "lud_cuda",
-    # "needle",
-    # "nn",
-    # "particlefilter_float",
-    # "particlefilter_naive",
-    # "pathfinder",
-    # "sc_gpu",
-    # "srad_v1",
-    # "srad_v2",
+    "lavaMD",
+    "lud_cuda",
+    "needle",
+    "nn",
+    "particlefilter_float",
+    "particlefilter_naive",
+    "pathfinder",
+    "sc_gpu",
+    "srad_v1",
+    "srad_v2",
   ]
 
   rodinia_benchmark_subdir = {
