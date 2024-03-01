@@ -132,6 +132,10 @@ This is the list of traces that you can access in `rover` machine. I will keep t
 | Pytorch           | Resnet Training      | O                 | /fast_data/echung67/trace_pytorch/nvbit/resnet_train | default | /fast_data/echung67/trace_pytorch/source/resnet_train.py |
 |                   | CNN Training         | O                 | /fast_data/echung67/trace_pytorch/nvbit/cnn_train | default | /fast_data/echung67/trace_pytorch/source/cnn_train.py |
 |                   | CNN Inference        | O                 | /fast_data/echung67/trace_pytorch/nvbit/cnn_inf | default | /fast_data/echung67/trace_pytorch/source/cnn_inference.py |
+|                   | Bert-tiny            | O                 | /fast_data/echung67/trace_pytorch/nvbit/bert_tiny | default | /fast_data/echung67/sandbox/bert/bert_tiny.py |
+|                   | Bert-mini            | O                 | /fast_data/echung67/trace_pytorch/nvbit/bert_mini | default | /fast_data/echung67/sandbox/bert/bert_mini.py |
+|                   | Bert-small           | O                 | /fast_data/echung67/trace_pytorch/nvbit/bert_small | default | /fast_data/echung67/sandbox/bert/bert_small.py |
+|                   | Bert-medium          | O                 | /fast_data/echung67/trace_pytorch/nvbit/bert_medium | default | /fast_data/echung67/sandbox/bert/bert_medium.py |
 
 
 ### Upcoming Plans for trace generations..
@@ -145,10 +149,6 @@ This is the list of traces that you can access in `rover` machine. I will keep t
 |                   | Sparse Inference     | -                  | - | - |
 |                   | Sparse Training      | -                  | - | - |
 | Pytorch           | Resnet Inference     | ?                  | /fast_data/echung67/trace_pytorch/nvbit/resnet_inf | - |
-|                   | Bert-tiny            | ?                  | /fast_data/echung67/trace_pytorch/nvbit/bert_tiny | default | /fast_data/echung67/sandbox/bert/bert_tiny.py |
-|                   | Bert-mini            | ?                  | /fast_data/echung67/trace_pytorch/nvbit/bert_mini | default | /fast_data/echung67/sandbox/bert/bert_mini.py |
-|                   | Bert-small           | ?                  | /fast_data/echung67/trace_pytorch/nvbit/bert_small | default | /fast_data/echung67/sandbox/bert/bert_small.py |
-|                   | Bert-medium          | ?                  | /fast_data/echung67/trace_pytorch/nvbit/bert_medium | default | /fast_data/echung67/sandbox/bert/bert_medium.py |
 | GraphBig          | -                    | -                  | - | - |
 | Gunrock           | -                    | -                  | - | - |
 | Tango             | More Block Sizes?    | -                  | - | - |
