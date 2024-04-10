@@ -91,10 +91,9 @@ See `macsim_result.txt` in the result directory for STDOUT and STDERR outputs du
 > ❗️ You should not change the name of the parameter file `params.in`. The macsim binary will try to find `params.in` file in the same directory and use it as the GPU configuration.
 
 ## List of available traces
-
 This is the list of traces that you can access in `rover` machine. I will keep this updated. 
 **Suggested Configuration** of each benchmark is the configuration that I used in the BNPL paper.
-
+### Full Traces
 | Benchmark suite   | Benchmark            | Working on Macsim? | Trace Path | Suggested Config | Source Code |
 |-------------------|----------------------|-------------------|-|-|-|
 | Vector            | vectoradd            | O                 | /fast_data/echung67/trace/nvbit/vectoradd | 65536 | /fast_data/echung67/trace/source |
@@ -122,37 +121,57 @@ This is the list of traces that you can access in `rover` machine. I will keep t
 |                   | LSTM                 | O                 | /fast_data/echung67/trace_tango/nvbit/LSTM | default |
 |                   | ResNet               | X                 | X | X |
 |                   | SqueezeNet           | X                 | X | X |
-| FasterTransformer | bert                 | O                 | /data/echung67/trace/nvbit/bert_example | 20 | /fast_data/echung67/FasterTransformer/examples/cpp/ |
-|                   | decoding             | O                 | /data/echung67/trace/nvbit/decoding_example | 20 |
+| FasterTransformer (early stopping) | bert                 | O                 | /data/echung67/nvbit_trace_backup/trace_ft/nvbit/bert_example | 20 | /fast_data/echung67/FasterTransformer/examples/cpp/ |
+|                   | decoding             | O                 | /data/echung67/nvbit_trace_backup/trace_ft/nvbit/decoding_example | 20 |
 |                   | vit                  | X                 | X | X |
-|                   | swin                 | O                 | /data/echung67/trace/nvbit/swin_example | 20 | 
-|                   | wenet_decoder        | O                 | /data/echung67/trace/nvbit/wenet_decoder_example | 20 |
-|                   | wenet_encoder        | O                 | /data/echung67/trace/nvbit/wenet_encoder_example | 20 |
+|                   | swin                 | O                 | /data/echung67/nvbit_trace_backup/trace_ft/nvbit/swin_example | 20 | 
+|                   | wenet_decoder        | O                 | /data/echung67/nvbit_trace_backup/trace_ft/nvbit/wenet_decoder_example | 20 |
+|                   | wenet_encoder        | O                 | /data/echung67/nvbit_trace_backup/trace_ft/nvbit/wenet_encoder_example | 20 |
 |                   | xlnet                | X                 | X | X |
-| Deepbench         | GEMM                 | O                 | /fast_data/echung67/trace_deep/nvbit/gemm | default | /fast_data/echung67/DeepBench/code/nvidia_small/gemm_bench.cu |
-|                   | CNN Inference        | O                 | /fast_data/echung67/trace_deep/nvbit/cnn_inf | default | /fast_data/echung67/DeepBench/code/nvidia_small/conv_bench.cu |
+| Deepbench         | GEMM Training Float32 | O                 | /data/echung67/trace_deep/nvbit/gemm_train_float | default | /fast_data/echung67/DeepBench/code/nvidia_small/gemm_bench.cu |
+|                   | GEMM Training Float16        | O                 | /data/echung67/trace_deep/nvbit/gemm_train_half | default | /fast_data/echung67/DeepBench/code/nvidia_small/gemm_bench.cu |
+|                   | GEMM Inference Float32        | O                 | /data/echung67/trace_deep/nvbit/gemm_inf_float | default | /fast_data/echung67/DeepBench/code/nvidia_small/gemm_bench.cu |
+|                   | GEMM Inference Float16        | O                 | /data/echung67/trace_deep/nvbit/gemm_inf_half | default | /fast_data/echung67/DeepBench/code/nvidia_small/gemm_bench.cu |
+|          | CNN Training Float32 | O                 | /data/echung67/trace_deep/nvbit/cnn_train_float | default | /fast_data/echung67/DeepBench/code/nvidia_small/conv_bench.cu |
+|                   | CNN Training Float16        | O                 | /data/echung67/trace_deep/nvbit/cnn_train_half | default | /fast_data/echung67/DeepBench/code/nvidia_small/conv_bench.cu |
+|                   | CNN Inference Float32        | O                 | /data/echung67/trace_deep/nvbit/cnn_inf_float | default | /fast_data/echung67/DeepBench/code/nvidia_small/conv_bench.cu |
+|                   | CNN Inference Float16        | O                 | /data/echung67/trace_deep/nvbit/cnn_inf_half | default | /fast_data/echung67/DeepBench/code/nvidia_small/conv_bench.cu |
+|          | RNN Training Float32 | O                 | /data/echung67/trace_deep/nvbit/rnn_train_float | default | /fast_data/echung67/DeepBench/code/nvidia_small/rnn_bench.cu |
+|                   | RNN Training Float16        | O                 | /data/echung67/trace_deep/nvbit/rnn_train_half | default | /fast_data/echung67/DeepBench/code/nvidia_small/rnn_bench.cu |
+|                   | RNN Inference Float32        | O                 | /data/echung67/trace_deep/nvbit/rnn_inf_float | default | /fast_data/echung67/DeepBench/code/nvidia_small/rnn_bench.cu |
+|                   | RNN Inference Float16        | O                 | /data/echung67/trace_deep/nvbit/rnn_inf_half | default | /fast_data/echung67/DeepBench/code/nvidia_small/rnn_bench.cu |
 | Pytorch           | Resnet Training      | O                 | /fast_data/echung67/trace_pytorch/nvbit/resnet_train | default | /fast_data/echung67/trace_pytorch/source/resnet_train.py |
 |                   | Resnet Inference     | O                 | /fast_data/echung67/trace_pytorch/nvbit/resnet_inf | default | /fast_data/echung67/trace_pytorch/source/resnet_inference.py |
 |                   | CNN Training         | O                 | /fast_data/echung67/trace_pytorch/nvbit/cnn_train | default | /fast_data/echung67/trace_pytorch/source/cnn_train.py |
 |                   | CNN Inference        | O                 | /fast_data/echung67/trace_pytorch/nvbit/cnn_inf | default | /fast_data/echung67/trace_pytorch/source/cnn_inference.py |
-|                   | Bert-tiny            | O                 | /fast_data/echung67/trace_pytorch/nvbit/bert_tiny | default | /fast_data/echung67/sandbox/bert/bert_tiny.py |
-|                   | Bert-mini            | O                 | /fast_data/echung67/trace_pytorch/nvbit/bert_mini | default | /fast_data/echung67/sandbox/bert/bert_mini.py |
-|                   | Bert-small           | O                 | /fast_data/echung67/trace_pytorch/nvbit/bert_small | default | /fast_data/echung67/sandbox/bert/bert_small.py |
-|                   | Bert-medium          | O                 | /fast_data/echung67/trace_pytorch/nvbit/bert_medium | default | /fast_data/echung67/sandbox/bert/bert_medium.py |
+|                   | Bert-tiny            | O                 | /fast_data/echung67/trace_pytorch/nvbit/bert_tiny | default | /fast_data/echung67/trace_pytorch/source/bert_tiny.py |
+|                   | Bert-mini            | O                 | /fast_data/echung67/trace_pytorch/nvbit/bert_mini | default | /fast_data/echung67/trace_pytorch/source/bert_mini.py |
+|                   | Bert-small           | O                 | /fast_data/echung67/trace_pytorch/nvbit/bert_small | default | /fast_data/echung67/trace_pytorch/source/bert_small.py |
+|                   | Bert-medium          | O                 | /fast_data/echung67/trace_pytorch/nvbit/bert_medium | default | /fast_data/echung67/trace_pytorch/source/bert_medium.py |
+### Sampled Traces
+| Benchmark suite   | Benchmark            | Working on Macsim? | Trace Path | Suggested Config | Source Code |
+|-------------------|----------------------|-------------------|-|-|-|
+| LLMs              | Bert-sampled | O                 | /fast_data/echung67/trace_sampled/nvbit/bert-sampled | default | /fast_data/echung67/trace_sampled/source/bert_medium/bert_medium.py |
+|                   | Bloom   | O                 | /fast_data/echung67/trace_sampled/nvbit/bloom | default | /fast_data/echung67/trace_sampled/source/bloom.py |
+|                   | Gemma   | O                 | /fast_data/echung67/trace_sampled/nvbit/gemma | default | /fast_data/echung67/trace_sampled/source/gemma.py |
+|                   | GPT2   | O                 | /fast_data/echung67/trace_sampled/nvbit/gpt2 | default | /fast_data/echung67/trace_sampled/source/gpt2.py |
+|                   | OLMO 1Bit-Net   | O                 | /fast_data/echung67/trace_sampled/nvbit/olmo-bitnet | default | /fast_data/echung67/trace_sampled/source/olmo-bitnet.py |
+| Vision            | Resnet50 inference   | O                 | /fast_data/echung67/trace_sampled/nvbit/resnet50 | default | /fast_data/echung67/trace_sampled/source/resnet50.py |
+|                   | Deit (Vision Transformer)   | O                 | /fast_data/echung67/trace_sampled/nvbit/deit | default | /fast_data/echung67/trace_sampled/source/deit.py |
 
-
-### Upcoming Plans for trace generations..
+### Upcoming Plans
 | Benchmark suite   | Benchmark            | Working on Macsim? | Trace Path | Suggested Config |
 |-------------------|----------------------|--------------------| - | - |
-| Deepbench         | CNN Training         | -                  | - | - |
-|                   | RNN Inference        | -                  | - | - |
-|                   | RNN Training         | -                  | - | - |
-|                   | Sparse Inference     | -                  | - | - |
-|                   | Sparse Training      | -                  | - | - |
 | GraphBig          | -                    | -                  | - | - |
 | Gunrock           | -                    | -                  | - | - |
-| Tango             | More Block Sizes?    | -                  | - | - |
-
+| FasterTransformer (sampled) | - | - | - |
+| CUDA SDK example | - | - | - |
+| Parboil | - | - | - |
+| Cutlass | - | - | - |
+| Heteromark | - | - | - |
+| Polybench | - | - | - |
+| Crystal | - | - | - |
+| SOHC | - | - | - |
 
 ## How to create your own trace
 > ❗️Warning❗️ The trace generation tool for macsim is very unstable, so use at your own risk.

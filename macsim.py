@@ -4,7 +4,7 @@ import argparse
 import subprocess
 import shutil
 
-VALID_SUITE_NAMES = ["vector", "rodinia", "tango", "fastertransformer", "deepbench", "pytorch"]
+VALID_SUITE_NAMES = ["vector", "rodinia", "tango", "fastertransformer", "deepbench", "pytorch", "llm", "vision"]
 
 def process_options():
   parser = argparse.ArgumentParser(description='macsim.py')
@@ -119,13 +119,33 @@ def run(argv):
   }
 
   deep_benchmark_names = [
-    "gemm",
-    "cnn_inf",
+    "gemm_train_float",
+    "gemm_train_half",
+    "gemm_inf_float",
+    "gemm_inf_half",
+    "cnn_train_float",
+    "cnn_train_half",
+    "cnn_inf_float",
+    "cnn_inf_half",
+    "rnn_train_float",
+    "rnn_train_half",
+    "rnn_inf_float",
+    "rnn_inf_half",
   ]
 
   deep_benchmark_subdir = {
-    "gemm": ["default"],
-    "cnn_inf": ["default"],
+    "gemm_train_float": [""],
+    "gemm_train_half": [""],
+    "gemm_inf_float": [""],
+    "gemm_inf_half": [""],
+    "cnn_train_float": [""],
+    "cnn_train_half": [""],
+    "cnn_inf_float": [""],
+    "cnn_inf_half": [""],
+    "rnn_train_float": [""],
+    "rnn_train_half": [""],
+    "rnn_inf_float": [""],
+    "rnn_inf_half": [""],
   }
 
   torch_benchmark_names = [
@@ -150,6 +170,32 @@ def run(argv):
     "bert_medium": ["default"],
   }
 
+  llm_benchmark_names = [
+    "bert-sampled",
+    "bloom",
+    "gemma",
+    "gpt2",
+    "olmo-bitnet",
+  ]
+
+  llm_benchmark_subdir = {
+    "bert-sampled": [""],
+    "bloom": [""],
+    "gemma": [""],
+    "gpt2": [""],
+    "olmo-bitnet": [""],
+  }
+
+  vision_benchmark_names = [
+    "resnet50",
+    "deit",
+  ]
+
+  vision_benchmark_subdir = {
+    "resnet50": [""],
+    "deit": [""],
+  }
+
   if args.suite:
     for suite_name in args.suite:
       if suite_name == 'vector':
@@ -165,17 +211,25 @@ def run(argv):
         benchmark_names = tango_benchmark_names
         benchmark_subdir = tango_benchmark_subdir
       elif suite_name == 'fastertransformer':
-        trace_path_base = "/data/echung67/trace/nvbit/"
+        trace_path_base = "/data/echung67/nvbit_trace_backup/trace_ft/nvbit/"
         benchmark_names = ft_benchmark_names
         benchmark_subdir = ft_benchmark_subdir
       elif suite_name == 'deepbench':
-        trace_path_base = "/fast_data/echung67/trace_deep/nvbit/"
+        trace_path_base = "/data/echung67/trace_deep/nvbit/"
         benchmark_names = deep_benchmark_names
         benchmark_subdir = deep_benchmark_subdir
       elif suite_name == 'pytorch':
         trace_path_base = "/fast_data/echung67/trace_pytorch/nvbit/"
         benchmark_names = torch_benchmark_names
         benchmark_subdir = torch_benchmark_subdir
+      elif suite_name == 'llm':
+        trace_path_base = "/fast_data/echung67/trace_sampled/nvbit/"
+        benchmark_names = llm_benchmark_names
+        benchmark_subdir = llm_benchmark_subdir
+      elif suite_name == 'vision':
+        trace_path_base = "/fast_data/echung67/trace_sampled/nvbit/"
+        benchmark_names = vision_benchmark_names
+        benchmark_subdir = vision_benchmark_subdir
       else:
         exit()
 
@@ -211,7 +265,7 @@ def run(argv):
 
           cmd = "nohup ./macsim > macsim_result.txt 2>&1"
           print(f"[cmd]: {cmd}")
-          subprocess.Popen([f"ulimit -n 16384 && {cmd}"], shell=True, cwd=subdir)
+          # subprocess.Popen([f"ulimit -n 16384 && {cmd}"], shell=True, cwd=subdir)
   return
 
 if __name__ == '__main__':
