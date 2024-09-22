@@ -33,9 +33,10 @@ $ cp /fast_data/echung67/macsim/bin/params.in .
 $ cp /fast_data/echung67/macsim/bin/trace_file_list .
 ```
 Note that you need three input files: 
-- `macsim` (binary executable),
-- `params.in` (GPU configuration), and
-- `trace_file_list` (list of paths to GPU traces)
+- `macsim`: binary executable,
+- `params.in`: GPU configuration, and
+- `trace_file_list`: list of paths to GPU traces
+
 to run the Macsim simulation. All these three files should be in the same directory to run Macsim.
 
 ### Running
