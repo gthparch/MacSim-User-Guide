@@ -39,6 +39,15 @@ Note that you need three input files:
 
 to run the Macsim simulation. All these three files should be in the same directory to run Macsim.
 
+### Downloading Traces
+
+```
+pip install gdown
+gdown -O macsim_traces.tar.gz 1rpAgIMGJnrnXwDSiaM3S7hBysFoVhyO1
+tar -xzf macsim_traces.tar.gz
+rm macsim_traces.tar.gz
+```
+
 ### Running
 #### 1. Setup the Trace Path
 
