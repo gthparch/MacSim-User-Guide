@@ -19,7 +19,7 @@ Author: Euijun Chung (echung67@gatech.edu)
 ### Installation
 Installing Macsim is as easy as it gets. Just run the following commands:
 ```
-$ git clone https://github.com/gthparch/macsim.git
+$ git clone https://github.com/gthparch/macsim.git --recursive
 $ cd macsim
 $ git switch nvbit
 $ ./build.py --ramulator -j32
