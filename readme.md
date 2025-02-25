@@ -17,6 +17,13 @@ Author: Euijun Chung (echung67@gatech.edu)
 
 ## Macsim Installation & Usage
 ### Installation
+Dependencies
+```
+scons
+zlib
+python>=3.11
+```
+
 Installing Macsim is as easy as it gets. Just run the following commands:
 ```
 $ git clone https://github.com/gthparch/macsim.git --recursive
