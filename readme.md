@@ -35,9 +35,9 @@ $ ./build.py --ramulator -j32
 If you want to save time and can access `rover`, just copy it from my directory. 
 ```
 $ cd dst/to/your/directory
-$ cp /fast_data/echung67/macsim/bin/macsim .
-$ cp /fast_data/echung67/macsim/bin/params.in .
-$ cp /fast_data/echung67/macsim/bin/trace_file_list .
+$ cp path/to/your/macsim/bin/macsim .
+$ cp path/to/your/macsim/bin/params.in .
+$ cp path/to/your/macsim/bin/trace_file_list .
 ```
 Note that you need three input files: 
 - `macsim`: binary executable,
@@ -48,12 +48,25 @@ to run the Macsim simulation. All these three files should be in the same direct
 
 ### Downloading Traces
 
+The following is the instructions for downloading the small subset of Rodinia GPGPU benchmark suite [link](https://github.com/ejchung0406/gpu-rodinia), which is good for testing purposes. 
 ```
 pip install gdown
 gdown -O macsim_traces.tar.gz 1rpAgIMGJnrnXwDSiaM3S7hBysFoVhyO1
 tar -xzf macsim_traces.tar.gz
 rm macsim_traces.tar.gz
 ```
+
+#### Publicly Available Traces
+
+The following datasets are available for download:
+
+- **Rodinia**: [Download](https://www.dropbox.com/scl/fi/qyqk9yuxaut0f9490k5n3/pytorch_nvbit.tar.gz?rlkey=dgq53t37k38izawacgxdkqxsw&st=fbvchdmw&dl=0)  
+- **PyTorch**: [Download](https://www.dropbox.com/scl/fi/otaiy3gnmkcrexy66hkez/rodinia_nvbit.tar.gz?rlkey=w2pa56a0ik42zydl0incogc99&st=y3ki6xyy&dl=0)  
+- **YOLOPv2**: [Download](https://www.dropbox.com/scl/fi/srmp7cp2uw6lup34j4keg/yolopv2.tar.gz?rlkey=s5pg7dhdub7jofit3omy446n3&st=d6dfq6uy&dl=0)  
+
+#### Generate More Traces
+
+To generate additional traces for your own CUDA workloads, use the [MacSim Tracer](https://github.com/ejchung0406/CUDA_trace_generator).
 
 ### Running
 #### 1. Setup the Trace Path
@@ -63,13 +76,13 @@ Open trace_file_list and leave 1 on the first line. Change the second line to th
 An example of `trace_file_list` would look like this:
 ```
 1
-/fast_data/echung67/trace/nvbit/backprop/1024/kernel_config.txt
+/path/to/your/traces/backprop/1024/kernel_config.txt
 ```
 which is for running `backprop` benchmark of `Rodinia Suite` with `1024` configuration.
 
 #### 2. Setup the GPU configuration
 
-Open `params.in` file and put in some numbers for the GPU configuration. An example is at `/fast_data/echung67/macsim/bin/params.in`, and I used this configuration for BNPL paper's evaluation. 
+Open `params.in` file and put in some numbers for the GPU configuration. An example is at `macsim/bin/params.in`, and I used this configuration for BNPL paper's evaluation. 
 
 #### 3. Run!
 
@@ -82,7 +95,7 @@ For example, you can check the total number of cycles in `general.stat.out` file
 
 
 ## Scripts for running Macsim
-`macsim.py` is a python script that I used to run multiple macsim simulations at the same time.
+`macsim.py` is a python script that I used to run multiple macsim simulations at the same time. Be careful before running, it is only for demonstration purposes and there are some hardcoded paths. 
 ### Usage
 usage: `python3 macsim.py`
 ```
@@ -107,8 +120,9 @@ See `macsim_result.txt` in the result directory for STDOUT and STDERR outputs du
 
 > ❗️ You should not change the name of the parameter file `params.in`. The macsim binary will try to find `params.in` file in the same directory and use it as the GPU configuration.
 
-## List of available traces
-This is the list of traces that you can access in `rover` machine. I will keep this updated. 
+## List of available traces (available only for HPArch members)
+This is the list of traces that you can access in `rover` machine. I will keep this updated. Unfortunately these traces are only available for [HPArch](https://sites.gatech.edu/hparch/) members. If you are a person outside our research group but want to extensively use the traces, please let me know to mailto:euijun@gatech.edu.
+
 **Suggested Configuration** of each benchmark is the configuration that I used in the BNPL paper.
 ### Full Traces
 | Benchmark suite   | Benchmark            | Working on Macsim? | Trace Path | Suggested Config | Source Code |
@@ -165,6 +179,7 @@ This is the list of traces that you can access in `rover` machine. I will keep t
 |                   | Bert-mini            | O                 | /fast_data/echung67/trace_pytorch/nvbit/bert_mini | default | /fast_data/echung67/trace_pytorch/source/bert_mini.py |
 |                   | Bert-small           | O                 | /fast_data/echung67/trace_pytorch/nvbit/bert_small | default | /fast_data/echung67/trace_pytorch/source/bert_small.py |
 |                   | Bert-medium          | O                 | /fast_data/echung67/trace_pytorch/nvbit/bert_medium | default | /fast_data/echung67/trace_pytorch/source/bert_medium.py |
+|                   | YoloPv2              | O                 | /data/echung67/trace/nvbit/yolopv2 | default | /fast_data/echung67/YOLOPv2/run.sh |
 ### Sampled Traces
 | Benchmark suite   | Benchmark            | Working on Macsim? | Trace Path | Suggested Config | Source Code |
 |-------------------|----------------------|-------------------|-|-|-|
