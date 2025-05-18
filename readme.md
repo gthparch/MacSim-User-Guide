@@ -62,7 +62,9 @@ The following datasets are available for download:
 
 - **Rodinia**: [Download](https://www.dropbox.com/scl/fi/qyqk9yuxaut0f9490k5n3/pytorch_nvbit.tar.gz?rlkey=dgq53t37k38izawacgxdkqxsw&st=fbvchdmw&dl=0)  
 - **PyTorch**: [Download](https://www.dropbox.com/scl/fi/otaiy3gnmkcrexy66hkez/rodinia_nvbit.tar.gz?rlkey=w2pa56a0ik42zydl0incogc99&st=y3ki6xyy&dl=0)  
-- **YOLOPv2**: [Download](https://www.dropbox.com/scl/fi/srmp7cp2uw6lup34j4keg/yolopv2.tar.gz?rlkey=s5pg7dhdub7jofit3omy446n3&st=d6dfq6uy&dl=0)  
+- **YOLOPv2**: [Download](https://www.dropbox.com/scl/fi/srmp7cp2uw6lup34j4keg/yolopv2.tar.gz?rlkey=s5pg7dhdub7jofit3omy446n3&st=d6dfq6uy&dl=0)
+- **GPT2**: [Download](https://www.dropbox.com/scl/fi/qn72hfwyeo5qq120kyade/gpt2_nvbit.tar.gz?rlkey=pal8q77bwf4iarypfts2osus3&st=cmjslv8o&dl=0)
+- **GEMMA**: [Download](https://www.dropbox.com/scl/fi/ewcyrogwv7odc6soi9v6n/gemma_nvbit.tar.gz?rlkey=arifvlad3kj9tcw6ogze7n04m&st=66fbac0t&dl=0)
 
 #### Generate More Traces
 
